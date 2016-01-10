@@ -4,6 +4,7 @@
 # Survival Funcion: S(x) = P(X > x) => S(x) = 1 - F(x)
 # quantile: F( Xa ) = a
 # median: 50th percentile
+# P(A∪B)=P(A)+P(B)−P(A∩B)
 
 # Se define una función de densidad probabilistica
 # debe tener un area de 1 (2*1/2 = 1)y los valores deben  
