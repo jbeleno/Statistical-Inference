@@ -24,6 +24,7 @@ birth <- function(){
 }
 
 # Distribución normal
+# iid = Independient and identically distributed
 # Cuando u = 0 y o = 1, entonces es distribución normal estándar o curva de Bell
 # u - o < 68% < u + o
 # u - 2o < 95% < u + 2o
@@ -63,6 +64,16 @@ ads2 <- function(){
     
     q <- qnorm(0.75, mean = 1020, sd = 50)
     q
+}
+
+quiz24 <- function(){
+    mean<- 1100
+    sd<- 75
+    n<- 100
+    var<- sd/sqrt(n)
+    quantile<- 1.645
+    answ<- mean+(var*quantile)
+    answ
 }
 
 # Distribución de Poisson
