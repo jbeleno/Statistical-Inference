@@ -1,6 +1,6 @@
 # Asintotas
-# Ley de grandes números(LLN): El promedio de los límites de lo
-# que se está estimando tiende al promedio de la población.
+# Ley de grandes n??meros(LLN): El promedio de los l??mites de lo
+# que se est?? estimando tiende al promedio de la poblaci??n.
 #
 # Un estimador es consistente si converge a lo que queremos 
 # estimar
@@ -17,16 +17,16 @@ lln_coin <- function(){
     means
 }
 
-# Teorema del límite central (CLT)
+# Teorema del l??mite central (CLT)
 # Primero se deben normalizar las funciones de probabilidad
-# (Estimación - Media de la estimación)/Error estándar de la estimación
+# (Estimaci??n - Media de la estimaci??n)/Error est??ndar de la estimaci??n
 # Mean(Xn) ~ N(u, o^2/sqrt(n)) 
 #
 # Sea Xi la salida del dado i
 # Entonces, se sabe que u = E[Xi] = 3.5
 # Var(Xi) = 2.92
 # SE = sqrt(2.92/n)=1.71/sqrt(n)
-# El resultado de aplicar el CLT es una distribución normal normalizada
+# El resultado de aplicar el CLT es una distribuci??n normal normalizada
 # con centro en 0
 
 quiz2p6 <- function(){
@@ -55,4 +55,19 @@ montecarlo1 <- function(){
         
         mean(ll < lambda & ul > lambda)
     })
+}
+
+# Código para el proyecto 1 parte 1
+project1 <- function(){
+    nosim <- 1000
+    n <- 40
+    lambda <- 0.2
+    
+    m <- 1/lambda
+    sd <- 1/lambda             # Esta es la desviación estándar teorica
+    se <- sd/sqrt(n)           # Esta es el error estándar
+    
+    mdistribution = NULL
+    for (i in 1 : nosim) mdistribution = c(mns, rexp(n, lambda))
+    var(mdistribution)
 }
