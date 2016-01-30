@@ -67,3 +67,27 @@ ejemplo3 <- function(){
     power.t.test(power = .8, delta = 2, sd=4, type = "one.sample",  alt = "one.sided")$n
     power.t.test(power = .8, delta = 100, sd=200, type = "one.sample", alt = "one.sided")$n
 }
+
+ejemplo4 <- function(){
+    ppois(10, lambda = 0.01 * 1787)
+    
+    
+    rate <- 1/100
+    errors <- 10
+    days <- 1787
+    test <-  poisson.test(errors, T = days, r = rate, alt="less")
+    round(test$p.value,2)
+    
+    # Otro punto
+    n_y <- 9 # subjects treated
+    n_x <- 9 # subjects placebo
+    σ_y <- 1.5# kg/m2 std.dev. treated 
+    σ_x <- 1.8# kg/m2 std.dev. placebo 
+    μ_y <- -3#  kg/m2 average difference treated
+    μ_x <- 1#  kg/m2 average difference placebo
+    
+    # calculate pooled standard deviation
+    σ_p <- (((n_x - 1) * σ_x^2 + (n_y - 1) * σ_y^2)/(n_x + n_y - 2))
+    pval <- pt((μ_y - μ_x) / (σ_p * (1 / n_x + 1 / n_y)^.5), df=n_y + n_x -2)
+    pval
+}
