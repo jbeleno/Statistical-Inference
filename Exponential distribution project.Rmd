@@ -94,7 +94,7 @@ c(tvar, svar)
 
 ## Distribution
 
-In this case we need compare the data shown in the histogram with a 
+In this case it's compared the data shown in the histogram with a 
 posible normal distribution, but before doing this, the histogram is 
 normalized.
 ```{r, fig.cap="Normal distribution behaivor in our data"}
